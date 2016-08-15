@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>旋转立方体</title>
+	<style>
+		body{
+			background: #000;
+			perspective-origin: 50% 75%;	
+			perspective: 800px;
+		}
+		#main{
+			width: 200px;
+			height: 200px;
+			position: relative;
+			margin: 100px auto;
+			transform-style: preserve-3d;
+			animation: rotate 3s linear infinite;
+		}
+		@keyframes rotate{
+			from{
+				transform: rotateY(0deg);
+			}
+			to{
+				transform: rotateY(360deg);
+			}
+		}
+		#main div{
+			width: 200px;
+			height: 200px;
+			border-radius: 5px;
+			background: #fff;
+			opacity: 0.6;
+			text-align: center;
+			line-height: 200px;
+			position: absolute;
+			font-size: 100px;
+			border: 1px solid #fff;
+		}
+		/* scale3d 就是同时放大x y z */
+		#div1{
+			transform: scale3d(1.2,1.2,1.2) rotateX(90deg) translateZ(100px);
+		}
+		#div3{
+			transform: scale3d(1.2,1.2,1.2) rotateY(90deg) translateZ(100px);
+		}
+		#div4{
+			transform: scale3d(1.2,1.2,1.2) rotateY(180deg) translateZ(100px);
+		}
+		#div5{
+			transform: scale3d(1.2,1.2,1.2) rotateY(-90deg) translateZ(100px);
+		}
+		#div6{
+			transform: scale3d(1.2,1.2,1.2) rotateX(-90deg) translateZ(100px);
+		}
+		#div2{
+			transform: scale3d(1.2,1.2,1.2) translateZ(100px);
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<div id="div1">1</div>
+		<div id="div2">2</div>
+		<div id="div3">3</div>
+		<div id="div4">4</div>
+		<div id="div5">5</div>
+		<div id="div6">6</div>
+	</div>
+</body>
+</html>
